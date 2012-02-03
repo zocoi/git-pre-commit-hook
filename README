@@ -6,5 +6,6 @@ Current keywords: "Rails.logger", "console.log"
 == Getting Started
 
     $ cd rails_project
-    $ cp pre-commit /.git/hooks/pre-commit
+    $ wget https://github.com/zocoi/git-pre-commit-hook-for-rails/raw/master/pre-commit
+    $ mv pre-commit /.git/hooks/
     $ chmod +x .git/hooks/pre-commit
