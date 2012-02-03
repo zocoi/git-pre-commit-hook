@@ -1,0 +1,10 @@
+== git pre-commit hook for rails development
+
+Ensures that changes to the project may only be committed if there is no logging or debugging methods included.
+Current keywords: "Rails.logger", "console.log"
+
+== Getting Started
+
+    $ cd rails_project
+    $ cp pre-commit /.git/hooks/pre-commit
+    $ chmod +x .git/hooks/pre-commit

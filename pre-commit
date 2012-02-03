@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+# vim: set syntax=ruby
+# Hung Dao
+
+
+checks = []
+# Rails
+checks << "Rails.logger"
+# Javascript
+checks << "console.log"
+
+check_count = checks.size
+
+errors = []
+
+files_changed = `git diff --name-only HEAD`
+files_changed.each_line do |filename|
+  filename.chomp!
+  file = open(filename)
+  puts "Checking #{filename}: "
+  checks.each do |check|
+    unless file.grep(/#{check}/).empty?
+      errors << {:name => check, :file => filename}
+    end
+  end
+end
+
+unless errors.empty?
+  errors.each do |error|
+    puts "'#{error[:name]}' found in file: #{error[:file]}"
+  end
+  exit 1
+end
