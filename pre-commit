@@ -1,15 +1,11 @@
 #!/usr/bin/env ruby
 # vim: set syntax=ruby
-# Hung Dao
-
 
 checks = []
 # Rails
-checks << "Rails.logger"
+checks.concat ["Rails.logger", "puts"]
 # Javascript
-checks << "console.log"
-
-check_count = checks.size
+checks.concat ["console.log", "debugger"]
 
 errors = []
 
