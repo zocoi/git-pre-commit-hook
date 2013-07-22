@@ -13,5 +13,8 @@ Current keywords: "Rails.logger", "console.log"
 ### Use globally
 
     curl -O https://github.com/zocoi/git-pre-commit-hook/raw/master/pre-commit
+    # Default git
+    mv pre-commit /usr/share/git-core/templates/hooks/
+    # Homebrew git
     mv pre-commit /usr/local/share/git-core/templates/hooks/
     chmod +x /usr/local/share/git-core/templates/hooks/pre-commit
